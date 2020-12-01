@@ -1,0 +1,17 @@
+{
+	"compilerOptions": {
+		"strict": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+		"target": "es2019",
+    "sourceMap": false,
+    "inlineSourceMap": true,
+    "sourceRoot": "src",
+		"outDir": "./dist",
+		"declaration": false,
+		"removeComments": false,
+		"alwaysStrict": true,
+		"allowSyntheticDefaultImports": true,
+		"pretty": true
+	}
+}
