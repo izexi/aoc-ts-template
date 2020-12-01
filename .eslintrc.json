@@ -21,6 +21,7 @@
 	"plugins": ["@typescript-eslint", "prettier"],
     "rules": {
         "prettier/prettier": ["error", { "singleQuote": true }],
-        "@typescript-eslint/explicit-module-boundary-types": "off"
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+        "@typescript-eslint/no-non-null-assertion": "off"
     }
 }

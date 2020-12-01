@@ -1,3 +1,5 @@
+import { formatDay } from './util';
+
 const day = Number(process.env.npm_config_day ?? 0);
 const part = Number(process.env.npm_config_part ?? 0);
 
@@ -5,7 +7,7 @@ const outputSolution = (part: number) =>
   console.log(
     `Day ${day} | Part ${part} - Solution: ${
       // eslint-disable-next-line @typescript-eslint/no-var-requires
-      require(`./day${day}/part${part}.js`).default
+      require(`./day${formatDay(day)}/part${part}.js`).default
     }`
   );
 

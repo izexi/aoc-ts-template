@@ -1,5 +1,8 @@
 import { mkdirSync, readFileSync, writeFileSync } from 'fs';
 
+export const formatDay = (day: number | string) =>
+  day.toString().padStart(2, '0');
+
 /**
  * @typedef {Object} SplitOptions
  * @property {string|false} [delimiter='\n'] - a delimeter to split the input by (false will omit the splitting and return the entire input)
@@ -25,7 +28,7 @@ export function parseInput<T>({
   split,
 }: { split?: SplitOptions<T> | false } = {}) {
   const input = readFileSync(
-    `./src/day${process.env.npm_config_day}/input.txt`,
+    `./src/day${formatDay(process.env.npm_config_day!)}/input.txt`,
     {
       encoding: 'utf-8',
     }
@@ -48,10 +51,10 @@ const input = parseInput();
 // TODO: Complete Part ${part}
 `;
 
-export function setupDay(day: number) {
-  const dir = `./src/day${day}`;
+export const setupDay = (day: number) => {
+  const dir = `./src/day${formatDay(day)}`;
   mkdirSync(dir);
   writeFileSync(`${dir}/input.txt`, '');
   writeFileSync(`${dir}/part1.ts`, genTemplate(1));
   writeFileSync(`${dir}/part2.ts`, genTemplate(2));
-}
+};
